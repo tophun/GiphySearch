@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
+        // Todo: Seach 초기화면 생성 시 변경 필요
         let viewController = ViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         
