@@ -31,14 +31,14 @@
 /* Begin PBXFileReference section */
 		04F84F9AB5EB9435C1AED648156C3968 /* Pods-GiphySearch-GiphySearchUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GiphySearch-GiphySearchUITests-dummy.m"; sourceTree = "<group>"; };
 		056F5FCAE5EFEA353E15DF3EEFCE5F61 /* Pods-GiphySearch-GiphySearchUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GiphySearch-GiphySearchUITests-Info.plist"; sourceTree = "<group>"; };
-		090243BD09949A62A8780D8FEC56A9BB /* Pods-GiphySearch-GiphySearchUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GiphySearch-GiphySearchUITests"; path = Pods_GiphySearch_GiphySearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		090243BD09949A62A8780D8FEC56A9BB /* Pods_GiphySearch_GiphySearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch_GiphySearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F4D5979D9954E8B2D2B4135DD8A3F64 /* Pods-GiphySearchTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GiphySearchTests.modulemap"; sourceTree = "<group>"; };
 		16BC1BCF1D6E58D9DFFFC27E8D6C6F1A /* Pods-GiphySearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GiphySearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22898991FFE2B80447547F0C10BEB935 /* Pods-GiphySearch-GiphySearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GiphySearch-GiphySearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		262FEE49DD24E00BDF671AA77764286C /* Pods-GiphySearch-GiphySearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		352B4957C47E6461A88139D36F238B2C /* Pods-GiphySearch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GiphySearch-Info.plist"; sourceTree = "<group>"; };
 		3BEC80F86DD88FF3C23EDFCBE17409FD /* Pods-GiphySearch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GiphySearch-acknowledgements.markdown"; sourceTree = "<group>"; };
-		413808E171A690210949BD6ABC5D6899 /* Pods-GiphySearch */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GiphySearch"; path = Pods_GiphySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		413808E171A690210949BD6ABC5D6899 /* Pods_GiphySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C53F8176DB9F1346E0839FB5406E2D /* Pods-GiphySearchTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GiphySearchTests-dummy.m"; sourceTree = "<group>"; };
 		4E6B0B31BE7899582B7CCEA14A289767 /* Pods-GiphySearch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GiphySearch-acknowledgements.plist"; sourceTree = "<group>"; };
 		6114A2316F00FCD82F8DED045B0F608F /* Pods-GiphySearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GiphySearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,11 +47,11 @@
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		765A0B4AB591CCB62D6BCE2EB49592DA /* Pods-GiphySearch-GiphySearchUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GiphySearch-GiphySearchUITests.modulemap"; sourceTree = "<group>"; };
 		790DD37F9E42B94E63F2A274C5E06F13 /* Pods-GiphySearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GiphySearchTests.release.xcconfig"; sourceTree = "<group>"; };
-		7AB96A0D305720F269B4280AE8E27AC4 /* Pods-GiphySearchTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GiphySearchTests"; path = Pods_GiphySearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB96A0D305720F269B4280AE8E27AC4 /* Pods_GiphySearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EB83AFF193A3D6377E65083AB2D78A /* Pods-GiphySearchTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GiphySearchTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		963CA33BD81E5C3749353B74EE28BEF6 /* Pods-GiphySearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GiphySearch-umbrella.h"; sourceTree = "<group>"; };
 		9A744C8FDDCB1A82DF6A53B9862A6363 /* Pods-GiphySearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GiphySearch-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1FA443964E5C9BF69543E7B3BFBCCDA /* Pods-GiphySearch-GiphySearchUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GiphySearch-GiphySearchUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A546C2C4D82F6744CF80A1EB08FA89B1 /* Pods-GiphySearchTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GiphySearchTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C4BD6AF8105A206D0D429C1D0E39E9BB /* Pods-GiphySearch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GiphySearch.modulemap"; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 		12D8AF15809915230CDBE6D9ED109D7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				413808E171A690210949BD6ABC5D6899 /* Pods-GiphySearch */,
-				090243BD09949A62A8780D8FEC56A9BB /* Pods-GiphySearch-GiphySearchUITests */,
-				7AB96A0D305720F269B4280AE8E27AC4 /* Pods-GiphySearchTests */,
+				413808E171A690210949BD6ABC5D6899 /* Pods_GiphySearch.framework */,
+				090243BD09949A62A8780D8FEC56A9BB /* Pods_GiphySearch_GiphySearchUITests.framework */,
+				7AB96A0D305720F269B4280AE8E27AC4 /* Pods_GiphySearchTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 			);
 			name = "Pods-GiphySearchTests";
 			productName = Pods_GiphySearchTests;
-			productReference = 7AB96A0D305720F269B4280AE8E27AC4 /* Pods-GiphySearchTests */;
+			productReference = 7AB96A0D305720F269B4280AE8E27AC4 /* Pods_GiphySearchTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		87D9CF4321E7C357C8771FE1611374FC /* Pods-GiphySearch-GiphySearchUITests */ = {
@@ -246,7 +246,7 @@
 			);
 			name = "Pods-GiphySearch-GiphySearchUITests";
 			productName = Pods_GiphySearch_GiphySearchUITests;
-			productReference = 090243BD09949A62A8780D8FEC56A9BB /* Pods-GiphySearch-GiphySearchUITests */;
+			productReference = 090243BD09949A62A8780D8FEC56A9BB /* Pods_GiphySearch_GiphySearchUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BB3044774DC623D3E816467F6A43C9DB /* Pods-GiphySearch */ = {
@@ -264,7 +264,7 @@
 			);
 			name = "Pods-GiphySearch";
 			productName = Pods_GiphySearch;
-			productReference = 413808E171A690210949BD6ABC5D6899 /* Pods-GiphySearch */;
+			productReference = 413808E171A690210949BD6ABC5D6899 /* Pods_GiphySearch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -373,7 +373,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GiphySearchTests/Pods-GiphySearchTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,7 +411,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GiphySearchTests/Pods-GiphySearchTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +448,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GiphySearch/Pods-GiphySearch-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,7 +485,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GiphySearch-GiphySearchUITests/Pods-GiphySearch-GiphySearchUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,7 +523,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GiphySearch-GiphySearchUITests/Pods-GiphySearch-GiphySearchUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -659,7 +659,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -688,7 +688,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GiphySearch/Pods-GiphySearch-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
