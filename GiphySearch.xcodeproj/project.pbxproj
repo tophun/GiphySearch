@@ -130,6 +130,23 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		E280922B286BC975000F2C5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2C8433B286BC15100424D24 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E280922C286BC980000F2C5D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E2C8433D286BC15100424D24 /* LaunchScreen.storyboard */,
+				E2C84340286BC15100424D24 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		E2C84326286BC15000424D24 = {
 			isa = PBXGroup;
 			children = (
@@ -158,9 +175,8 @@
 			children = (
 				E2809229286BC887000F2C5D /* Application */,
 				E280922A286BC902000F2C5D /* Scenes */,
-				E2C8433B286BC15100424D24 /* Assets.xcassets */,
-				E2C8433D286BC15100424D24 /* LaunchScreen.storyboard */,
-				E2C84340286BC15100424D24 /* Info.plist */,
+				E280922B286BC975000F2C5D /* Resources */,
+				E280922C286BC980000F2C5D /* SupportingFiles */,
 			);
 			path = GiphySearch;
 			sourceTree = "<group>";
@@ -594,7 +610,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z2H4L8MUJ3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GiphySearch/Info.plist;
+				INFOPLIST_FILE = GiphySearch/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -624,7 +640,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z2H4L8MUJ3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GiphySearch/Info.plist;
+				INFOPLIST_FILE = GiphySearch/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
