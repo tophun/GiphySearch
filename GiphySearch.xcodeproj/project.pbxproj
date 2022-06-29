@@ -192,12 +192,12 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		E2809242286BE16B000F2C5D /* Modles */ = {
+		E2809242286BE16B000F2C5D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E2809243286BE17B000F2C5D /* Entities */,
 			);
-			path = Modles;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E2809243286BE17B000F2C5D /* Entities */ = {
@@ -236,7 +236,7 @@
 		E2C84331286BC15000424D24 /* GiphySearch */ = {
 			isa = PBXGroup;
 			children = (
-				E2809242286BE16B000F2C5D /* Modles */,
+				E2809242286BE16B000F2C5D /* Models */,
 				E280923D286BDC9B000F2C5D /* Services */,
 				E2809229286BC887000F2C5D /* Application */,
 				E280922A286BC902000F2C5D /* Scenes */,
