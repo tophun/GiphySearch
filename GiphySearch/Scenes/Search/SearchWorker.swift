@@ -10,8 +10,23 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Alamofire
 
 class SearchWorker {
+    func trending(offset: Int, completion: @escaping (Search.Trending.Response) -> Void) {
+        AF.request(GiphyAPI.trending(offset: offset))
+            .validate()
+            .responseDecodable(of: GifsResponse.self) { response in
+                switch response.result {
+                case let .success(value):
+                    let response = Search.Trending.Response(gifs: value.data)
+                    completion(response)
+                    
+                case let .failure(error):
+                    let response = Search.Trending.Response(error: error)
+                    completion(response)
+                }
+            }
+    }
     
 }

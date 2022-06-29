@@ -23,7 +23,8 @@ enum Search {
         }
         
         struct Response {
-            
+            var gifs: [Gif] = []
+            var error: Error?
         }
         
         struct ViewModel {
