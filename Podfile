@@ -18,8 +18,4 @@ target 'GiphySearch' do
     # Pods for testing
   end
 
-  target 'GiphySearchUITests' do
-    # Pods for testing
-  end
-
 end
