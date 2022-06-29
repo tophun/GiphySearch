@@ -8,11 +8,10 @@
 import Foundation
 
 struct Gif: Codable {
-    var url: String
     var images: Images
 }
 
-struct Images {
+struct Images: Codable {
     var original: Original
     var originalStill: Preview
     var preview: Preview
