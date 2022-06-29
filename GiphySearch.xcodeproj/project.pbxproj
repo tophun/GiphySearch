@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		553BC3277FF092DA9B8BBDFD /* Pods_GiphySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0980F7659886E5AE1DCEE90 /* Pods_GiphySearch.framework */; };
 		AF94A0C6F47D2553FBA96E49 /* Pods_GiphySearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA6F22857E8BA32D645374 /* Pods_GiphySearchTests.framework */; };
+		E25693B0286C272400548C34 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25693AF286C272400548C34 /* Cache.swift */; };
 		E2809235286BCDF4000F2C5D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280922F286BCDF4000F2C5D /* SearchPresenter.swift */; };
 		E2809236286BCDF4000F2C5D /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809230286BCDF4000F2C5D /* SearchWorker.swift */; };
 		E2809237286BCDF4000F2C5D /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809231286BCDF4000F2C5D /* SearchRouter.swift */; };
@@ -27,6 +28,7 @@
 		E2809255286BF55E000F2C5D /* SearchInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809251286BF55E000F2C5D /* SearchInteractorTests.swift */; };
 		E2809256286BF55E000F2C5D /* SearchWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809252286BF55E000F2C5D /* SearchWorkerTests.swift */; };
 		E2809257286BF55E000F2C5D /* SearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809253286BF55E000F2C5D /* SearchPresenterTests.swift */; };
+		E283FC1F286C1826005AC4E4 /* GifItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283FC1E286C1826005AC4E4 /* GifItemCell.swift */; };
 		E2C84333286BC15000424D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C84332286BC15000424D24 /* AppDelegate.swift */; };
 		E2C8433C286BC15100424D24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C8433B286BC15100424D24 /* Assets.xcassets */; };
 		E2C8433F286BC15100424D24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C8433D286BC15100424D24 /* LaunchScreen.storyboard */; };
@@ -51,6 +53,7 @@
 		D010C38CC0F595D4EE69C153 /* Pods_GiphySearch_GiphySearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch_GiphySearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FA3409179D9705B7C68593 /* Pods-GiphySearch-GiphySearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; path = "Target Support Files/Pods-GiphySearch-GiphySearchUITests/Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E0980F7659886E5AE1DCEE90 /* Pods_GiphySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25693AF286C272400548C34 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		E280922F286BCDF4000F2C5D /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		E2809230286BCDF4000F2C5D /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		E2809231286BCDF4000F2C5D /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		E2809251286BF55E000F2C5D /* SearchInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorTests.swift; sourceTree = "<group>"; };
 		E2809252286BF55E000F2C5D /* SearchWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorkerTests.swift; sourceTree = "<group>"; };
 		E2809253286BF55E000F2C5D /* SearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterTests.swift; sourceTree = "<group>"; };
+		E283FC1E286C1826005AC4E4 /* GifItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifItemCell.swift; sourceTree = "<group>"; };
 		E2C8432F286BC15000424D24 /* GiphySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C84332286BC15000424D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C8433B286BC15100424D24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +129,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E25693AE286C271C00548C34 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E25693AF286C272400548C34 /* Cache.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E2809229286BC887000F2C5D /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 				E2809230286BCDF4000F2C5D /* SearchWorker.swift */,
 				E2809231286BCDF4000F2C5D /* SearchRouter.swift */,
 				E2809232286BCDF4000F2C5D /* SearchModels.swift */,
+				E283FC1D286C1808005AC4E4 /* Cells */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -220,6 +233,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		E283FC1D286C1808005AC4E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E283FC1E286C1826005AC4E4 /* GifItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E2C84326286BC15000424D24 = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +265,7 @@
 		E2C84331286BC15000424D24 /* GiphySearch */ = {
 			isa = PBXGroup;
 			children = (
+				E25693AE286C271C00548C34 /* Common */,
 				E2809242286BE16B000F2C5D /* Models */,
 				E280923D286BDC9B000F2C5D /* Services */,
 				E2809229286BC887000F2C5D /* Application */,
@@ -437,10 +459,12 @@
 				E2809237286BCDF4000F2C5D /* SearchRouter.swift in Sources */,
 				E2809236286BCDF4000F2C5D /* SearchWorker.swift in Sources */,
 				E2809249286BE753000F2C5D /* Gif.swift in Sources */,
+				E283FC1F286C1826005AC4E4 /* GifItemCell.swift in Sources */,
 				E280923F286BDCBF000F2C5D /* GiphyAPI.swift in Sources */,
 				E2C84333286BC15000424D24 /* AppDelegate.swift in Sources */,
 				E280924E286BF4E9000F2C5D /* ApiError.swift in Sources */,
 				E2809235286BCDF4000F2C5D /* SearchPresenter.swift in Sources */,
+				E25693B0286C272400548C34 /* Cache.swift in Sources */,
 				E280924C286BEE22000F2C5D /* GifsResponse.swift in Sources */,
 				E2809247286BE2D5000F2C5D /* Pagination.swift in Sources */,
 				E2809238286BCDF4000F2C5D /* SearchModels.swift in Sources */,

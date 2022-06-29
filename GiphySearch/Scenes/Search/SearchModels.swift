@@ -14,11 +14,6 @@ import UIKit
 
 enum Search {
     
-    struct DisplayModel {
-        var url: String
-        var isFavorite: Bool
-    }
-    
     // MARK: Use cases
     enum Trending {
         

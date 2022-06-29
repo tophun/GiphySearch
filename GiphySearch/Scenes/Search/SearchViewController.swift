@@ -30,6 +30,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         return searchController
     }()
     
+    private var gifs: [Gif] = []
+    private var totalCount: Int = 0
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -95,7 +98,7 @@ extension SearchViewController {
 
 extension SearchViewController {
     func displayLoading() {
-        // Todo: Loading 인디케이터
+        // Todo: Loading indicator show
     }
     
     func displayError(_ error: Error) {
@@ -105,7 +108,13 @@ extension SearchViewController {
     }
     
     func displayTrending(viewModel: Search.Trending.ViewModel) {
+        // Todo: Loading indicator hidden
+        self.gifs = viewModel.gif
+        self.totalCount = viewModel.totalCount
         
+        print("gifs count: \(gifs.count)")
+        print("total count: \(totalCount)")
+        collectionView.reloadData()
     }
 }
 
@@ -116,12 +125,20 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) { }
 }
 
-extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return gifs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
+        cell.bind(gifs[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = trunc(UIScreen.main.bounds.width / 2)
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
     }
 }

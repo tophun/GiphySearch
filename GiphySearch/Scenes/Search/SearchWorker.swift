@@ -19,12 +19,16 @@ class SearchWorker {
             .responseDecodable(of: GifsResponse.self) { response in
                 switch response.result {
                 case let .success(value):
-                    let response = Search.Trending.Response(gifs: value.data, pagination: value.pagination)
-                    completion(response)
+                    DispatchQueue.main.async {
+                        let response = Search.Trending.Response(gifs: value.data, pagination: value.pagination)
+                        completion(response)
+                    }
                     
                 case let .failure(error):
-                    let response = Search.Trending.Response(error: error)
-                    completion(response)
+                    DispatchQueue.main.async {
+                        let response = Search.Trending.Response(error: error)
+                        completion(response)
+                    }
                 }
             }
     }
