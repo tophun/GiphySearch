@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Gif {
+struct Gif: Codable {
     var url: String
     var images: Images
 }
