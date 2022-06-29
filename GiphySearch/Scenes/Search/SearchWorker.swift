@@ -19,7 +19,7 @@ class SearchWorker {
             .responseDecodable(of: GifsResponse.self) { response in
                 switch response.result {
                 case let .success(value):
-                    let response = Search.Trending.Response(gifs: value.data)
+                    let response = Search.Trending.Response(gifs: value.data, pagination: value.pagination)
                     completion(response)
                     
                 case let .failure(error):
@@ -29,4 +29,7 @@ class SearchWorker {
             }
     }
     
+    func search(query: String, offset: Int, completion: @escaping (Search.Search.Response) -> Void) {
+        
+    }
 }

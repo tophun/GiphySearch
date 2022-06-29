@@ -14,6 +14,10 @@ import UIKit
 
 enum Search {
     
+    struct DisplayModel {
+        var url: String
+        var isFavorite: Bool
+    }
     
     // MARK: Use cases
     enum Trending {
@@ -24,11 +28,13 @@ enum Search {
         
         struct Response {
             var gifs: [Gif] = []
+            var pagination: Pagination?
             var error: Error?
         }
         
         struct ViewModel {
-            
+            var gif: [Gif]
+            var totalCount: Int
         }
     }
     

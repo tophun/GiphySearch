@@ -14,7 +14,8 @@ import UIKit
 
 protocol SearchDisplayLogic: AnyObject {
     func displayLoading()
-    func displayError(_ error: ApiError)
+    func displayError(_ error: Error)
+    func displayTrending(viewModel: Search.Trending.ViewModel)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
@@ -97,7 +98,13 @@ extension SearchViewController {
         // Todo: Loading 인디케이터
     }
     
-    func displayError(_ error: ApiError) {
+    func displayError(_ error: Error) {
+        let alert = UIAlertController(title: "알림", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(.init(title: "확인", style: .default))
+        present(alert, animated: true)
+    }
+    
+    func displayTrending(viewModel: Search.Trending.ViewModel) {
         
     }
 }

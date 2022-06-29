@@ -25,6 +25,12 @@ class SearchPresenter: SearchPresentationLogic {
     }
     
     func presentTrending(response: Search.Trending.Response) {
+        if let error = response.error {
+            viewController?.displayError(error)
+            return
+        }
         
+        let viewModel = Search.Trending.ViewModel(gif: response.gifs, totalCount: response.pagination?.totalCount ?? 0)
+        viewController?.displayTrending(viewModel: viewModel)
     }
 }
