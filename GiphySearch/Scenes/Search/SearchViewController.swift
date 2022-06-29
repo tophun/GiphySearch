@@ -71,6 +71,12 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        fetchTrending()
+    }
+    
+    private func fetchTrending() {
+        let request = Search.Trending.Request(offset: 0)
+        interactor?.trending(request: request)
     }
 }
 

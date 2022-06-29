@@ -36,7 +36,7 @@ class SearchViewControllerTests: XCTestCase {
     
     func setupSearchViewController() {
         let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        let storyboard = UIStoryboard(name: "Search", bundle: bundle)
         sut = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
     }
     
@@ -48,12 +48,22 @@ class SearchViewControllerTests: XCTestCase {
     // MARK: Test doubles
     
     class SearchBusinessLogicSpy: SearchBusinessLogic {
+        var trendingIsCalled = false
+        var trendingRequest: Search.Trending.Request!
+        func trending(request: Search.Trending.Request) {
+            trendingIsCalled = true
+            self.trendingRequest = request
+        }
         
+        var searchIsCalled = false
+        func search(request: Search.Search.Request) {
+            searchIsCalled = true
+        }
     }
     
     // MARK: Tests
     
-    func testShouldDoSomethingWhenViewIsLoaded() {
+    func testShouldTrendingWhenViewIsLoaded() {
         // Given
         let spy = SearchBusinessLogicSpy()
         sut.interactor = spy
@@ -62,15 +72,16 @@ class SearchViewControllerTests: XCTestCase {
         loadView()
         
         // Then
-        //XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
+        XCTAssertTrue(spy.trendingIsCalled, "viewDidLoad() should ask the interactor to do something")
+        XCTAssertEqual(spy.trendingRequest.offset, 0)
     }
     
     func testDisplaySomething() {
         // Given
-        let viewModel = Search.Something.ViewModel()
+        //let viewModel = Search.Something.ViewModel()
         
         // When
-        loadView()
+        //loadView()
         //sut.displaySomething(viewModel: viewModel)
         
         // Then
