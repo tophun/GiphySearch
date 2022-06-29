@@ -13,16 +13,36 @@
 import UIKit
 
 enum Search {
+    
+    
     // MARK: Use cases
-    enum Something {
+    enum Trending {
         
         struct Request {
+            var offset: Int
         }
         
         struct Response {
+            
         }
         
         struct ViewModel {
+            
+        }
+    }
+    
+    enum Search {
+        struct Request {
+            var query: String
+            var offset: Int
+        }
+        
+        struct Response {
+            
+        }
+        
+        struct ViewModel {
+            
         }
     }
 }
