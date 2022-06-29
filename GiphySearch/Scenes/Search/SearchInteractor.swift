@@ -33,6 +33,9 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     }
     
     func search(request: Search.Search.Request) {
-        
+        presenter?.presentLoading()
+        worker.search(query: request.query, offset: request.offset) { [weak self] response in
+            self?.presenter?.presentSearch(response: response)
+        }
     }
 }

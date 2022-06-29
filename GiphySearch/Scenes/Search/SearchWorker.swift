@@ -20,7 +20,7 @@ class SearchWorker {
                 switch response.result {
                 case let .success(value):
                     DispatchQueue.main.async {
-                        let response = Search.Trending.Response(gifs: value.data, pagination: value.pagination)
+                        let response = Search.Trending.Response(gifs: value.data)
                         completion(response)
                     }
                     
@@ -34,6 +34,26 @@ class SearchWorker {
     }
     
     func search(query: String, offset: Int, completion: @escaping (Search.Search.Response) -> Void) {
-        
+        AF.request(GiphyAPI.search(query: query, offset: offset))
+            .validate()
+            .responseDecodable(of: GifsResponse.self) { response in
+                switch response.result {
+                case let .success(value):
+                    DispatchQueue.main.async {
+                        let response = Search.Search.Response(gifs: value.data, pagination: value.pagination)
+                        completion(response)
+                    }
+                    
+                case let .failure(error):
+                    DispatchQueue.main.async {
+                        let response = Search.Search.Response(error: error)
+                        completion(response)
+                    }
+                }
+            }
     }
+}
+
+protocol GifStoreProtocol {
+    func fetchGifs()
 }

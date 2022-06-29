@@ -16,6 +16,7 @@ protocol SearchDisplayLogic: AnyObject {
     func displayLoading()
     func displayError(_ error: Error)
     func displayTrending(viewModel: Search.Trending.ViewModel)
+    func displaySearch(viewModel: Search.Search.ViewModel)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
@@ -32,6 +33,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     private var gifs: [Gif] = []
     private var totalCount: Int = 0
+    private var isSearch: Bool = true
     
     // MARK: Object lifecycle
     
@@ -83,6 +85,16 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         let request = Search.Trending.Request(offset: 0)
         interactor?.trending(request: request)
     }
+    
+    private func search(_ query: String) {
+        let request = Search.Search.Request(query: query, offset: gifs.count)
+        interactor?.search(request: request)
+    }
+    
+    private func reset() {
+        self.gifs.removeAll()
+        self.collectionView.reloadData()
+    }
 }
 
 extension SearchViewController {
@@ -110,10 +122,15 @@ extension SearchViewController {
     func displayTrending(viewModel: Search.Trending.ViewModel) {
         // Todo: Loading indicator hidden
         self.gifs = viewModel.gif
+        self.totalCount = 0
+        self.isSearch = false
+        collectionView.reloadData()
+    }
+    
+    func displaySearch(viewModel: Search.Search.ViewModel) {
+        self.gifs += viewModel.gif
         self.totalCount = viewModel.totalCount
-        
-        print("gifs count: \(gifs.count)")
-        print("total count: \(totalCount)")
+        self.isSearch = true
         collectionView.reloadData()
     }
 }
@@ -121,8 +138,16 @@ extension SearchViewController {
 // MARK: - UISearchBarDelegate
 
 extension SearchViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) { }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) { }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text, !query.isEmpty else { return }
+        reset()
+        search(query)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        reset()
+        fetchTrending()
+    }
 }
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -134,6 +159,21 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
         cell.bind(gifs[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if isSearch && indexPath.row == gifs.count - 1 && gifs.count < totalCount {
+            guard let query = searchController.searchBar.text else { return }
+            search(query)
+        }
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
+        cell.loadImage()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
+        cell.cancel()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

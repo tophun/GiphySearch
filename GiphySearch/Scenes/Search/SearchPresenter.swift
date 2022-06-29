@@ -15,6 +15,7 @@ import UIKit
 protocol SearchPresentationLogic {
     func presentLoading()
     func presentTrending(response: Search.Trending.Response)
+    func presentSearch(response: Search.Search.Response)
 }
 
 class SearchPresenter: SearchPresentationLogic {
@@ -30,7 +31,17 @@ class SearchPresenter: SearchPresentationLogic {
             return
         }
         
-        let viewModel = Search.Trending.ViewModel(gif: response.gifs, totalCount: response.pagination?.totalCount ?? 0)
+        let viewModel = Search.Trending.ViewModel(gif: response.gifs)
         viewController?.displayTrending(viewModel: viewModel)
+    }
+    
+    func presentSearch(response: Search.Search.Response) {
+        if let error = response.error {
+            viewController?.displayError(error)
+            return
+        }
+        
+        let viewModel = Search.Search.ViewModel(gif: response.gifs, totalCount: response.pagination?.totalCount ?? 0)
+        viewController?.displaySearch(viewModel: viewModel)
     }
 }

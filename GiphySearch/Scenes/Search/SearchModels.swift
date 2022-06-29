@@ -23,13 +23,11 @@ enum Search {
         
         struct Response {
             var gifs: [Gif] = []
-            var pagination: Pagination?
             var error: Error?
         }
         
         struct ViewModel {
             var gif: [Gif]
-            var totalCount: Int
         }
     }
     
@@ -40,11 +38,14 @@ enum Search {
         }
         
         struct Response {
-            
+            var gifs: [Gif] = []
+            var pagination: Pagination?
+            var error: Error?
         }
         
         struct ViewModel {
-            
+            var gif: [Gif]
+            var totalCount: Int
         }
     }
 }
