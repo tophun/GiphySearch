@@ -26,7 +26,10 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var worker = SearchWorker()
     
     func trending(request: Search.Trending.Request) {
-        
+        presenter?.presentLoading()
+        worker.trending(offset: request.offset) { [weak self] response in
+            self?.presenter?.presentTrending(response: response)
+        }
     }
     
     func search(request: Search.Search.Request) {

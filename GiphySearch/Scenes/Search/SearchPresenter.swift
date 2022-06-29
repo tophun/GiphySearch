@@ -14,6 +14,7 @@ import UIKit
 
 protocol SearchPresentationLogic {
     func presentLoading()
+    func presentTrending(response: Search.Trending.Response)
 }
 
 class SearchPresenter: SearchPresentationLogic {
@@ -21,5 +22,9 @@ class SearchPresenter: SearchPresentationLogic {
     
     func presentLoading() {
         viewController?.displayLoading()
+    }
+    
+    func presentTrending(response: Search.Trending.Response) {
+        
     }
 }
