@@ -13,7 +13,8 @@
 import UIKit
 
 protocol SearchDisplayLogic: AnyObject {
-    
+    func displayLoading()
+    func displayError(_ error: ApiError)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
@@ -86,6 +87,18 @@ extension SearchViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .never
         navigationItem.searchController = searchController
+    }
+}
+
+// MARK: - DisplayLogic
+
+extension SearchViewController {
+    func displayLoading() {
+        // Todo: Loading 인디케이터
+    }
+    
+    func displayError(_ error: ApiError) {
+        
     }
 }
 
