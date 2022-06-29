@@ -17,8 +17,8 @@
 		E2809238286BCDF4000F2C5D /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809232286BCDF4000F2C5D /* SearchModels.swift */; };
 		E2809239286BCDF4000F2C5D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809233286BCDF4000F2C5D /* SearchViewController.swift */; };
 		E280923A286BCDF4000F2C5D /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809234286BCDF4000F2C5D /* SearchInteractor.swift */; };
+		E280923C286BD129000F2C5D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E280923B286BD129000F2C5D /* Search.storyboard */; };
 		E2C84333286BC15000424D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C84332286BC15000424D24 /* AppDelegate.swift */; };
-		E2C84337286BC15000424D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C84336286BC15000424D24 /* ViewController.swift */; };
 		E2C8433C286BC15100424D24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C8433B286BC15100424D24 /* Assets.xcassets */; };
 		E2C8433F286BC15100424D24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C8433D286BC15100424D24 /* LaunchScreen.storyboard */; };
 		E2C8434A286BC15100424D24 /* GiphySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C84349286BC15100424D24 /* GiphySearchTests.swift */; };
@@ -57,9 +57,9 @@
 		E2809232286BCDF4000F2C5D /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		E2809233286BCDF4000F2C5D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E2809234286BCDF4000F2C5D /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		E280923B286BD129000F2C5D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E2C8432F286BC15000424D24 /* GiphySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C84332286BC15000424D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2C84336286BC15000424D24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2C8433B286BC15100424D24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2C8433E286BC15100424D24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C84340286BC15100424D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 		E280922A286BC902000F2C5D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E280923B286BD129000F2C5D /* Search.storyboard */,
 				E280922D286BCA78000F2C5D /* Search */,
-				E2C84336286BC15000424D24 /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -335,6 +335,7 @@
 			files = (
 				E2C8433F286BC15100424D24 /* LaunchScreen.storyboard in Resources */,
 				E2C8433C286BC15100424D24 /* Assets.xcassets in Resources */,
+				E280923C286BD129000F2C5D /* Search.storyboard in Resources */,
 				E2C84365286BC5B000424D24 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +464,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C84337286BC15000424D24 /* ViewController.swift in Sources */,
 				E2809239286BCDF4000F2C5D /* SearchViewController.swift in Sources */,
 				E280923A286BCDF4000F2C5D /* SearchInteractor.swift in Sources */,
 				E2809237286BCDF4000F2C5D /* SearchRouter.swift in Sources */,

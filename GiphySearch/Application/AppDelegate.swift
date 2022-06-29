@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        // Todo: Seach 초기화면 생성 시 변경 필요
-        let viewController = ViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        guard let rootViewController = UIStoryboard(name: "Search", bundle: nil).instantiateInitialViewController() else {
+            fatalError("Search.storyboard instantiateInitialViewController is nil")
+        }
         
-        window.rootViewController = navigationController
+        window.rootViewController = rootViewController
         window.makeKeyAndVisible()
         
         return true
