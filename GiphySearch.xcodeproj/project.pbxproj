@@ -36,6 +36,12 @@
 		E2C8433F286BC15100424D24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C8433D286BC15100424D24 /* LaunchScreen.storyboard */; };
 		E2C8434A286BC15100424D24 /* GiphySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C84349286BC15100424D24 /* GiphySearchTests.swift */; };
 		E2C84365286BC5B000424D24 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E2C84364286BC5B000424D24 /* README.md */; };
+		E2F0E30D286DDC0000E57120 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0E307286DDC0000E57120 /* DetailViewController.swift */; };
+		E2F0E30E286DDC0000E57120 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0E308286DDC0000E57120 /* DetailPresenter.swift */; };
+		E2F0E30F286DDC0000E57120 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0E309286DDC0000E57120 /* DetailInteractor.swift */; };
+		E2F0E310286DDC0000E57120 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0E30A286DDC0000E57120 /* DetailWorker.swift */; };
+		E2F0E311286DDC0000E57120 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0E30B286DDC0000E57120 /* DetailRouter.swift */; };
+		E2F0E312286DDC0000E57120 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F0E30C286DDC0000E57120 /* DetailModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,12 @@
 		E2C84345286BC15100424D24 /* GiphySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C84349286BC15100424D24 /* GiphySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphySearchTests.swift; sourceTree = "<group>"; };
 		E2C84364286BC5B000424D24 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E2F0E307286DDC0000E57120 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E2F0E308286DDC0000E57120 /* DetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		E2F0E309286DDC0000E57120 /* DetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		E2F0E30A286DDC0000E57120 /* DetailWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		E2F0E30B286DDC0000E57120 /* DetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		E2F0E30C286DDC0000E57120 /* DetailModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
 		E5DA6F22857E8BA32D645374 /* Pods_GiphySearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD32E99CE9C557899FD9F50 /* Pods-GiphySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch.debug.xcconfig"; path = "Target Support Files/Pods-GiphySearch/Pods-GiphySearch.debug.xcconfig"; sourceTree = "<group>"; };
 		FE17AFF3C12EEE6CFB4EF6C3 /* Pods-GiphySearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearchTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphySearchTests/Pods-GiphySearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E280923B286BD129000F2C5D /* Search.storyboard */,
+				E2F0E306286DDC0000E57120 /* Detail */,
 				E280922D286BCA78000F2C5D /* Search */,
 			);
 			path = Scenes;
@@ -289,6 +302,19 @@
 				E280924F286BF54A000F2C5D /* Scenes */,
 			);
 			path = GiphySearchTests;
+			sourceTree = "<group>";
+		};
+		E2F0E306286DDC0000E57120 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E2F0E307286DDC0000E57120 /* DetailViewController.swift */,
+				E2F0E308286DDC0000E57120 /* DetailPresenter.swift */,
+				E2F0E309286DDC0000E57120 /* DetailInteractor.swift */,
+				E2F0E30A286DDC0000E57120 /* DetailWorker.swift */,
+				E2F0E30B286DDC0000E57120 /* DetailRouter.swift */,
+				E2F0E30C286DDC0000E57120 /* DetailModels.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,9 +488,12 @@
 			files = (
 				E2809239286BCDF4000F2C5D /* SearchViewController.swift in Sources */,
 				E280923A286BCDF4000F2C5D /* SearchInteractor.swift in Sources */,
+				E2F0E30D286DDC0000E57120 /* DetailViewController.swift in Sources */,
+				E2F0E30F286DDC0000E57120 /* DetailInteractor.swift in Sources */,
 				E2809237286BCDF4000F2C5D /* SearchRouter.swift in Sources */,
 				E25693C0286C989900548C34 /* FavoriteManager.swift in Sources */,
 				E2809236286BCDF4000F2C5D /* SearchWorker.swift in Sources */,
+				E2F0E312286DDC0000E57120 /* DetailModels.swift in Sources */,
 				E2809249286BE753000F2C5D /* Gif.swift in Sources */,
 				E283FC1F286C1826005AC4E4 /* GifItemCell.swift in Sources */,
 				E280923F286BDCBF000F2C5D /* GiphyAPI.swift in Sources */,
@@ -475,8 +504,11 @@
 				E280924C286BEE22000F2C5D /* GifsResponse.swift in Sources */,
 				E25693BE286C924600548C34 /* UserDefaultsExtension.swift in Sources */,
 				E2809247286BE2D5000F2C5D /* Pagination.swift in Sources */,
+				E2F0E311286DDC0000E57120 /* DetailRouter.swift in Sources */,
 				E2809238286BCDF4000F2C5D /* SearchModels.swift in Sources */,
+				E2F0E30E286DDC0000E57120 /* DetailPresenter.swift in Sources */,
 				E2809245286BE182000F2C5D /* Meta.swift in Sources */,
+				E2F0E310286DDC0000E57120 /* DetailWorker.swift in Sources */,
 				E2809241286BE0B8000F2C5D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

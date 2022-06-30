@@ -181,4 +181,8 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         let height: CGFloat = width
         return CGSize(width: width, height: height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        router?.routeToDetail()
+    }
 }
