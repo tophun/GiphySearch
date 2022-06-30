@@ -9,12 +9,14 @@ import UIKit
 
 class GifItemCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     private var sessionTask : URLSessionDataTask?
     private var gif: Gif?
     
     public func bind(_ gif: Gif) {
         self.gif = gif
+        favoriteButton.isSelected = FavoriteManager.shared.list.contains(gif)
         loadImage()
     }
     
@@ -51,5 +53,18 @@ class GifItemCell: UICollectionViewCell {
     
     func cancel() {
         sessionTask?.cancel()
+    }
+    
+    @IBAction func touchFavorite(_ button: UIButton) {
+        guard let gif = gif else { return }
+        if button.isSelected {
+            // remove
+            FavoriteManager.shared.delete(gif)
+            
+        } else {
+            //
+            FavoriteManager.shared.create(gif)
+        }
+        button.isSelected.toggle()
     }
 }

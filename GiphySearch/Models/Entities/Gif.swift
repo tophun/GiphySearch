@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct Gif: Codable {
+struct Gif: Codable, Equatable {
+
+    var id: String
     var images: Images
+    
+    static func == (lhs: Gif, rhs: Gif) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 struct Images: Codable {

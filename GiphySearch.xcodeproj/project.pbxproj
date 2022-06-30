@@ -10,6 +10,8 @@
 		553BC3277FF092DA9B8BBDFD /* Pods_GiphySearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0980F7659886E5AE1DCEE90 /* Pods_GiphySearch.framework */; };
 		AF94A0C6F47D2553FBA96E49 /* Pods_GiphySearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA6F22857E8BA32D645374 /* Pods_GiphySearchTests.framework */; };
 		E25693B0286C272400548C34 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25693AF286C272400548C34 /* Cache.swift */; };
+		E25693BE286C924600548C34 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25693BD286C924600548C34 /* UserDefaultsExtension.swift */; };
+		E25693C0286C989900548C34 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25693BF286C989900548C34 /* FavoriteManager.swift */; };
 		E2809235286BCDF4000F2C5D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280922F286BCDF4000F2C5D /* SearchPresenter.swift */; };
 		E2809236286BCDF4000F2C5D /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809230286BCDF4000F2C5D /* SearchWorker.swift */; };
 		E2809237286BCDF4000F2C5D /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2809231286BCDF4000F2C5D /* SearchRouter.swift */; };
@@ -54,6 +56,8 @@
 		D4FA3409179D9705B7C68593 /* Pods-GiphySearch-GiphySearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; path = "Target Support Files/Pods-GiphySearch-GiphySearchUITests/Pods-GiphySearch-GiphySearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E0980F7659886E5AE1DCEE90 /* Pods_GiphySearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25693AF286C272400548C34 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		E25693BD286C924600548C34 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		E25693BF286C989900548C34 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		E280922F286BCDF4000F2C5D /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		E2809230286BCDF4000F2C5D /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		E2809231286BCDF4000F2C5D /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				E25693AF286C272400548C34 /* Cache.swift */,
+				E25693BD286C924600548C34 /* UserDefaultsExtension.swift */,
+				E25693BF286C989900548C34 /* FavoriteManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				E2809239286BCDF4000F2C5D /* SearchViewController.swift in Sources */,
 				E280923A286BCDF4000F2C5D /* SearchInteractor.swift in Sources */,
 				E2809237286BCDF4000F2C5D /* SearchRouter.swift in Sources */,
+				E25693C0286C989900548C34 /* FavoriteManager.swift in Sources */,
 				E2809236286BCDF4000F2C5D /* SearchWorker.swift in Sources */,
 				E2809249286BE753000F2C5D /* Gif.swift in Sources */,
 				E283FC1F286C1826005AC4E4 /* GifItemCell.swift in Sources */,
@@ -466,6 +473,7 @@
 				E2809235286BCDF4000F2C5D /* SearchPresenter.swift in Sources */,
 				E25693B0286C272400548C34 /* Cache.swift in Sources */,
 				E280924C286BEE22000F2C5D /* GifsResponse.swift in Sources */,
+				E25693BE286C924600548C34 /* UserDefaultsExtension.swift in Sources */,
 				E2809247286BE2D5000F2C5D /* Pagination.swift in Sources */,
 				E2809238286BCDF4000F2C5D /* SearchModels.swift in Sources */,
 				E2809245286BE182000F2C5D /* Meta.swift in Sources */,

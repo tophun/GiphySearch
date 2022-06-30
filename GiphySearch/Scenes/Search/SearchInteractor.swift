@@ -18,12 +18,13 @@ protocol SearchBusinessLogic {
 }
 
 protocol SearchDataStore {
-    
+    var gifs: [Gif] { get set }
 }
 
 class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var presenter: SearchPresentationLogic?
     var worker = SearchWorker()
+    var gifs: [Gif] = []
     
     func trending(request: Search.Trending.Request) {
         presenter?.presentLoading()
@@ -33,8 +34,13 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     }
     
     func search(request: Search.Search.Request) {
+        if request.offset == 0 {
+            gifs.removeAll()
+        }
+        
         presenter?.presentLoading()
         worker.search(query: request.query, offset: request.offset) { [weak self] response in
+            self?.gifs += response.gifs
             self?.presenter?.presentSearch(response: response)
         }
     }
