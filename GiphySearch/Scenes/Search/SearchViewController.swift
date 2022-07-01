@@ -33,7 +33,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     private var gifs: [Gif] = []
     private var totalCount: Int = 0
-    private var isSearch: Bool = true
+    private var isSearch: Bool = false
     
     // MARK: Object lifecycle
     
@@ -79,6 +79,12 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         super.viewDidLoad()
         setupView()
         fetchTrending()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
     }
     
     private func fetchTrending() {
@@ -184,5 +190,24 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         router?.routeToDetail()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: String(describing: SearchHeaderViewCell.self), for: indexPath) as? SearchHeaderViewCell else { fatalError() }
+            header.titleLabel.text = isSearch ? "Result(\(totalCount))" : "Trending"
+            return header
+            
+        default:
+            assert(false, "")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if gifs.isEmpty {
+            return .zero
+        }
+        return CGSize(width: collectionView.frame.width, height: 45)
     }
 }

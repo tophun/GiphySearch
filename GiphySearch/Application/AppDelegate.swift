@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        guard let rootViewController = UIStoryboard(name: "Search", bundle: nil).instantiateInitialViewController() else {
-            fatalError("Search.storyboard instantiateInitialViewController is nil")
+        guard let rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() else {
+            fatalError("Main.storyboard instantiateInitialViewController is nil")
         }
         
         window.rootViewController = rootViewController

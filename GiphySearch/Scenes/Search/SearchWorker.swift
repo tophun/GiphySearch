@@ -14,25 +14,23 @@ import Alamofire
 
 class SearchWorker {
     func trending(offset: Int, completion: @escaping (Search.Trending.Response) -> Void) {
-//        AF.request(GiphyAPI.trending(offset: offset))
-//            .validate()
-//            .responseDecodable(of: GifsResponse.self) { response in
-//                switch response.result {
-//                case let .success(value):
-//                    DispatchQueue.main.async {
-//                        let response = Search.Trending.Response(gifs: value.data)
-//                        completion(response)
-//                    }
-//
-//                case let .failure(error):
-//                    DispatchQueue.main.async {
-//                        let response = Search.Trending.Response(error: error)
-//                        completion(response)
-//                    }
-//                }
-//            }
-        let response = Search.Trending.Response(gifs: FavoriteManager.shared.list)
-        completion(response)
+        AF.request(GiphyAPI.trending(offset: offset))
+            .validate()
+            .responseDecodable(of: GifsResponse.self) { response in
+                switch response.result {
+                case let .success(value):
+                    DispatchQueue.main.async {
+                        let response = Search.Trending.Response(gifs: value.data)
+                        completion(response)
+                    }
+
+                case let .failure(error):
+                    DispatchQueue.main.async {
+                        let response = Search.Trending.Response(error: error)
+                        completion(response)
+                    }
+                }
+            }
     }
     
     func search(query: String, offset: Int, completion: @escaping (Search.Search.Response) -> Void) {

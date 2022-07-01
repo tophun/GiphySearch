@@ -27,8 +27,13 @@ class SearchInteractor: SearchBusinessLogic, SearchDataStore {
     var gifs: [Gif] = []
     
     func trending(request: Search.Trending.Request) {
+        if request.offset == 0 {
+            gifs.removeAll()
+        }
+        
         presenter?.presentLoading()
         worker.trending(offset: request.offset) { [weak self] response in
+            self?.gifs += response.gifs
             self?.presenter?.presentTrending(response: response)
         }
     }
