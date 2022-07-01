@@ -24,14 +24,19 @@
                                     <constraint firstAttribute="width" secondItem="cuG-hN-ukw" secondAttribute="height" multiplier="1:1" id="xbv-UY-7P9"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YnF-ry-7sC">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X1G-8A-sAv"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cuG-hN-ukw" firstAttribute="leading" secondItem="X1G-8A-sAv" secondAttribute="leading" id="0vz-rP-rpB"/>
+                            <constraint firstItem="YnF-ry-7sC" firstAttribute="centerX" secondItem="Gew-8N-Vgm" secondAttribute="centerX" id="S4b-pZ-95Y"/>
                             <constraint firstItem="cuG-hN-ukw" firstAttribute="centerY" secondItem="Gew-8N-Vgm" secondAttribute="centerY" id="Wsj-h6-gHh"/>
                             <constraint firstItem="cuG-hN-ukw" firstAttribute="centerX" secondItem="Gew-8N-Vgm" secondAttribute="centerX" id="bZh-RI-n8P"/>
                             <constraint firstItem="X1G-8A-sAv" firstAttribute="trailing" secondItem="cuG-hN-ukw" secondAttribute="trailing" id="mM0-wS-igG"/>
+                            <constraint firstItem="YnF-ry-7sC" firstAttribute="centerY" secondItem="Gew-8N-Vgm" secondAttribute="centerY" id="peg-fL-dq7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tqk-UA-LP0">
@@ -45,6 +50,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="YnF-ry-7sC" id="a8G-Ip-iph"/>
                         <outlet property="favoriteButton" destination="yWb-Pf-b3Y" id="7bP-PO-OBf"/>
                         <outlet property="imageView" destination="cuG-hN-ukw" id="rJg-r0-vdQ"/>
                     </connections>

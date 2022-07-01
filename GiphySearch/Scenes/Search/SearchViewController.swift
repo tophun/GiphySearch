@@ -179,7 +179,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         }
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
-        cell.loadImage()
+        cell.loadGif()
     }
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

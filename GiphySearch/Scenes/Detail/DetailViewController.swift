@@ -23,6 +23,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Object lifecycle
     
@@ -69,13 +70,44 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         interactor?.fetch()
     }
     
-    private func download(url: URL, completion: @escaping (UIImage?) -> Void) {
+    private func downloadGif(url: URL, completion: @escaping (UIImage?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { completion(nil); return }
-            let image = UIImage(data: data)
-            completion(image)
+            guard let data = data,
+                  let source = CGImageSourceCreateWithData(data as CFData, nil) else {
+                print("image doesn't exist")
+                completion(nil)
+                return
+            }
+            
+            completion(UIImage.animatedImageWithSource(source))
         }
         task.resume()
+    }
+    
+    func loadGif(url: URL) {
+        loading(true)
+        if let cacheImage = Cache.imageCache.object(forKey: url.absoluteString as NSString) {
+            DispatchQueue.main.async { [weak self] in
+                self?.loading(false)
+                self?.imageView.image = cacheImage
+            }
+            
+        } else {
+            downloadGif(url: url, completion: { image in
+                DispatchQueue.main.async { [weak self] in
+                    if let image = image {
+                        Cache.imageCache.setObject(image, forKey: url.absoluteString as NSString)
+                    }
+                    self?.loading(false)
+                    self?.imageView.image = image
+                }
+            })
+        }
+    }
+    
+    private func loading(_ activate: Bool) {
+        activityIndicator.isHidden = !activate
+        activate ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
     
     private func setFavoriteButtonImage(_ isFavorite: Bool) {
@@ -94,22 +126,8 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
 extension DetailViewController {
     func displayFetch(viewModel: Detail.Fetch.ViewModel) {
         self.setFavoriteButtonImage(viewModel.isFavorite)
-        guard let url = URL(string: viewModel.gif.images.originalStill.url) else { return }
-        if let cacheImage = Cache.imageCache.object(forKey: url.absoluteString as NSString) {
-            DispatchQueue.main.async { [weak self] in
-                self?.imageView.image = cacheImage
-            }
-            
-        } else {
-            download(url: url, completion: { image in
-                DispatchQueue.main.async { [weak self] in
-                    if let image = image {
-                        Cache.imageCache.setObject(image, forKey: url.absoluteString as NSString)
-                    }
-                    self?.imageView.image = image
-                }
-            })
-        }
+        guard let url = URL(string: viewModel.gif.images.original.url) else { return }
+        loadGif(url: url)
     }
     
     func displayUpdate(viewModel: Detail.Update.ViewModel) {

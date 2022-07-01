@@ -43,7 +43,7 @@ class GifItemCell: UICollectionViewCell {
     
     func loadGif() {
         guard let gif = gif,
-              let url = URL(string: gif.images.preview.url) else { return }
+              let url = URL(string: gif.images.original.url) else { return }
         loading(true)
         if let cacheImage = Cache.imageCache.object(forKey: url.absoluteString as NSString) {
             DispatchQueue.main.async { [weak self] in
