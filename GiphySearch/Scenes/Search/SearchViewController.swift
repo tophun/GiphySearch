@@ -23,7 +23,11 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic & SearchDataPassing)?
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(UINib(nibName: "GifItemCell", bundle: nil), forCellWithReuseIdentifier: "GifItemCell")
+        }
+    }
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)

@@ -7,7 +7,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,54 +27,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifItemCell" id="J1m-Wc-Qdh" customClass="GifItemCell" customModule="GiphySearch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="171" height="172"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bfm-6b-rqi">
-                                            <rect key="frame" x="0.0" y="0.0" width="171" height="172"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XvN-AP-t8l">
-                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="172"/>
-                                                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-tT-VXB">
-                                                    <rect key="frame" x="126" y="10" width="35" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="5c9-Ow-S54"/>
-                                                        <constraint firstAttribute="width" constant="35" id="mQw-eX-rrK"/>
-                                                    </constraints>
-                                                    <color key="tintColor" systemColor="systemRedColor"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal">
-                                                        <imageReference key="image" image="suit.heart" catalog="system" symbolScale="default"/>
-                                                    </state>
-                                                    <state key="selected">
-                                                        <imageReference key="image" image="suit.heart.fill" catalog="system" symbolScale="default"/>
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="touchFavorite:" destination="J1m-Wc-Qdh" eventType="touchUpInside" id="pEP-An-Lvh"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="XvN-AP-t8l" secondAttribute="bottom" id="AFc-Ki-xi7"/>
-                                                <constraint firstItem="XvN-AP-t8l" firstAttribute="top" secondItem="Bfm-6b-rqi" secondAttribute="top" id="XOW-nq-80v"/>
-                                                <constraint firstAttribute="trailing" secondItem="XvN-AP-t8l" secondAttribute="trailing" id="epd-nq-Uwe"/>
-                                                <constraint firstItem="XvN-AP-t8l" firstAttribute="leading" secondItem="Bfm-6b-rqi" secondAttribute="leading" id="hqo-T6-Ugk"/>
-                                                <constraint firstItem="8j9-tT-VXB" firstAttribute="top" secondItem="Bfm-6b-rqi" secondAttribute="top" constant="10" id="meN-1c-0Rq"/>
-                                                <constraint firstAttribute="trailing" secondItem="8j9-tT-VXB" secondAttribute="trailing" constant="10" id="wv3-CL-UNR"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="171" height="172"/>
-                                        <connections>
-                                            <outlet property="favoriteButton" destination="8j9-tT-VXB" id="kQL-O1-oiE"/>
-                                            <outlet property="imageView" destination="XvN-AP-t8l" id="IVC-UZ-JOu"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="aKs-pX-vVD"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="dsj-kr-U9g"/>
@@ -125,16 +77,8 @@
     </scenes>
     <resources>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="suit.heart" catalog="system" width="128" height="109"/>
-        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

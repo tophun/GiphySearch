@@ -52,6 +52,7 @@
 		E2F0E324286E669500E57120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F0E323286E669500E57120 /* Main.storyboard */; };
 		E2F0E327286E66EA00E57120 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F0E326286E66EA00E57120 /* Favorite.storyboard */; };
 		E2F0E329286E66F000E57120 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F0E328286E66F000E57120 /* Detail.storyboard */; };
+		E2F0E32B286E86F800E57120 /* GifItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F0E32A286E86F800E57120 /* GifItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		E2F0E323286E669500E57120 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2F0E326286E66EA00E57120 /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		E2F0E328286E66F000E57120 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		E2F0E32A286E86F800E57120 /* GifItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GifItemCell.xib; sourceTree = "<group>"; };
 		E5DA6F22857E8BA32D645374 /* Pods_GiphySearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiphySearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD32E99CE9C557899FD9F50 /* Pods-GiphySearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearch.debug.xcconfig"; path = "Target Support Files/Pods-GiphySearch/Pods-GiphySearch.debug.xcconfig"; sourceTree = "<group>"; };
 		FE17AFF3C12EEE6CFB4EF6C3 /* Pods-GiphySearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiphySearchTests.debug.xcconfig"; path = "Target Support Files/Pods-GiphySearchTests/Pods-GiphySearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				E283FC1E286C1826005AC4E4 /* GifItemCell.swift */,
+				E2F0E32A286E86F800E57120 /* GifItemCell.xib */,
 				E2F0E313286DDFC500E57120 /* SearchHeaderViewCell.swift */,
 			);
 			path = Cells;
@@ -444,6 +447,7 @@
 				E2F0E327286E66EA00E57120 /* Favorite.storyboard in Resources */,
 				E2C8433C286BC15100424D24 /* Assets.xcassets in Resources */,
 				E2F0E329286E66F000E57120 /* Detail.storyboard in Resources */,
+				E2F0E32B286E86F800E57120 /* GifItemCell.xib in Resources */,
 				E280923C286BD129000F2C5D /* Search.storyboard in Resources */,
 				E2C84365286BC5B000424D24 /* README.md in Resources */,
 			);

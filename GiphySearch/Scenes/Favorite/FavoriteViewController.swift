@@ -20,7 +20,11 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
     var interactor: FavoriteBusinessLogic?
     var router: (NSObjectProtocol & FavoriteRoutingLogic & FavoriteDataPassing)?
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.register(UINib(nibName: "GifItemCell", bundle: nil), forCellWithReuseIdentifier: "GifItemCell")
+        }
+    }
     
     var favoriteList: [Gif] = []
     

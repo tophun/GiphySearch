@@ -10,6 +10,7 @@ import UIKit
 class GifItemCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var sessionTask : URLSessionDataTask?
     private var gif: Gif?
@@ -33,9 +34,10 @@ class GifItemCell: UICollectionViewCell {
     func loadImage() {
         guard let gif = gif,
               let url = URL(string: gif.images.previewStill.url) else { return }
-        
+        loading(true)
         if let cacheImage = Cache.imageCache.object(forKey: url.absoluteString as NSString) {
             DispatchQueue.main.async { [weak self] in
+                self?.loading(false)
                 self?.imageView.image = cacheImage
             }
             
@@ -45,6 +47,7 @@ class GifItemCell: UICollectionViewCell {
                     if let image = image {
                         Cache.imageCache.setObject(image, forKey: url.absoluteString as NSString)
                     }
+                    self?.loading(false)
                     self?.imageView.image = image
                 }
             })
@@ -66,5 +69,12 @@ class GifItemCell: UICollectionViewCell {
             FavoriteManager.shared.create(gif)
         }
         button.isSelected.toggle()
+    }
+}
+
+extension GifItemCell {
+    private func loading(_ activate: Bool) {
+        activityIndicator.isHidden = !activate
+        activate ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
     }
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifItemCell" id="lV1-ez-SqW" customClass="GifItemCell" customModule="GiphySearch" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="171" height="172"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="evu-pL-AXq">
+                <rect key="frame" x="0.0" y="0.0" width="171" height="172"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mnn-PU-soQ">
+                        <rect key="frame" x="0.0" y="0.0" width="171" height="172"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSp-E4-DbB">
+                        <rect key="frame" x="126" y="10" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="KgI-Vp-Pue"/>
+                            <constraint firstAttribute="height" constant="35" id="Vg7-Jx-KgR"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal">
+                            <imageReference key="image" image="suit.heart" catalog="system" symbolScale="default"/>
+                        </state>
+                        <state key="selected">
+                            <imageReference key="image" image="suit.heart.fill" catalog="system" symbolScale="default"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                        </state>
+                        <connections>
+                            <action selector="touchFavorite:" destination="lV1-ez-SqW" eventType="touchUpInside" id="u7D-ld-nJI"/>
+                        </connections>
+                    </button>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tG3-Lq-Cva">
+                        <rect key="frame" x="75.5" y="76" width="20" height="20"/>
+                        <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mnn-PU-soQ" firstAttribute="top" secondItem="evu-pL-AXq" secondAttribute="top" id="1Ty-c6-bFY"/>
+                    <constraint firstAttribute="trailing" secondItem="bSp-E4-DbB" secondAttribute="trailing" constant="10" id="3se-DT-rFl"/>
+                    <constraint firstItem="mnn-PU-soQ" firstAttribute="leading" secondItem="evu-pL-AXq" secondAttribute="leading" id="E18-gM-Vim"/>
+                    <constraint firstItem="tG3-Lq-Cva" firstAttribute="centerX" secondItem="evu-pL-AXq" secondAttribute="centerX" id="Wa7-Kn-ezY"/>
+                    <constraint firstItem="bSp-E4-DbB" firstAttribute="top" secondItem="evu-pL-AXq" secondAttribute="top" constant="10" id="cW1-Zf-ky6"/>
+                    <constraint firstItem="tG3-Lq-Cva" firstAttribute="centerY" secondItem="evu-pL-AXq" secondAttribute="centerY" id="eyp-8X-AkY"/>
+                    <constraint firstAttribute="trailing" secondItem="mnn-PU-soQ" secondAttribute="trailing" id="w2c-MP-9cE"/>
+                    <constraint firstAttribute="bottom" secondItem="mnn-PU-soQ" secondAttribute="bottom" id="wrx-Yz-C3h"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="171" height="172"/>
+            <connections>
+                <outlet property="activityIndicator" destination="tG3-Lq-Cva" id="c5S-8f-WBL"/>
+                <outlet property="favoriteButton" destination="bSp-E4-DbB" id="ffQ-54-cku"/>
+                <outlet property="imageView" destination="mnn-PU-soQ" id="lAb-SZ-rFJ"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="154"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
