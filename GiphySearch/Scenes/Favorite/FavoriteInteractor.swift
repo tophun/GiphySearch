@@ -13,7 +13,7 @@
 import UIKit
 
 protocol FavoriteBusinessLogic {
-    
+    func fetch()
 }
 
 protocol FavoriteDataStore {
@@ -22,6 +22,11 @@ protocol FavoriteDataStore {
 
 class FavoriteInteractor: FavoriteBusinessLogic, FavoriteDataStore {
     var presenter: FavoritePresentationLogic?
-    var worker: FavoriteWorker?
+    var worker = FavoriteWorker()
     
+    func fetch() {
+        worker.fetch { [weak self] response in
+            self?.presenter?.presentFetch(response: response)
+        }
+    }
 }

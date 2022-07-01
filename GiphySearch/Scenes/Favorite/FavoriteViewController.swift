@@ -13,12 +13,16 @@
 import UIKit
 
 protocol FavoriteDisplayLogic: AnyObject {
-    
+    func displayFetch(viewModel: Favorite.Fetch.ViewModel)
 }
 
 class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
     var interactor: FavoriteBusinessLogic?
     var router: (NSObjectProtocol & FavoriteRoutingLogic & FavoriteDataPassing)?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var favoriteList: [Gif] = []
     
     // MARK: Object lifecycle
     
@@ -64,6 +68,11 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
         super.viewDidLoad()
         setupView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor?.fetch()
+    }
 }
 
 extension FavoriteViewController {
@@ -71,5 +80,44 @@ extension FavoriteViewController {
         navigationItem.title = "Favortie"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .never
+    }
+}
+
+extension FavoriteViewController {
+    func displayFetch(viewModel: Favorite.Fetch.ViewModel) {
+        self.favoriteList = viewModel.list
+        self.collectionView.reloadData()
+    }
+}
+
+extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return favoriteList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
+        cell.bind(favoriteList[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
+        cell.loadImage()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
+        cell.cancel()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = trunc(UIScreen.main.bounds.width / 2)
+        let height: CGFloat = width
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }

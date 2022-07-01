@@ -13,5 +13,8 @@
 import UIKit
 
 class FavoriteWorker {
-    
+    func fetch(_ completion: @escaping (Favorite.Fetch.Response) -> Void) {
+        let response = Favorite.Fetch.Response(list: FavoriteManager.shared.list)
+        completion(response)
+    }
 }

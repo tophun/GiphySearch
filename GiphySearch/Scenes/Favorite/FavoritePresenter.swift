@@ -13,9 +13,14 @@
 import UIKit
 
 protocol FavoritePresentationLogic {
-    
+    func presentFetch(response: Favorite.Fetch.Response)
 }
 
 class FavoritePresenter: FavoritePresentationLogic {
     weak var viewController: FavoriteDisplayLogic?
+    
+    func presentFetch(response: Favorite.Fetch.Response) {
+        let viewModel = Favorite.Fetch.ViewModel(list: response.list)
+        viewController?.displayFetch(viewModel: viewModel)
+    }
 }

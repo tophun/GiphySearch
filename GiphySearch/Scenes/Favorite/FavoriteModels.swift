@@ -14,15 +14,17 @@ import UIKit
 
 enum Favorite {
     // MARK: Use cases
-    enum Something {
+    enum Fetch {
         
         struct Request {
         }
         
         struct Response {
+            var list: [Gif]
         }
         
         struct ViewModel {
+            var list: [Gif]
         }
     }
 }
