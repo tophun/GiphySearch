@@ -14,13 +14,19 @@ import UIKit
 
 protocol DetailPresentationLogic {
     func presentFetch(response: Detail.Fetch.Response)
+    func presentUpdate(response: Detail.Update.Response)
 }
 
 class DetailPresenter: DetailPresentationLogic {
     weak var viewController: DetailDisplayLogic?
     
     func presentFetch(response: Detail.Fetch.Response) {
-        let viewModel = Detail.Fetch.ViewModel(gif: response.gif)
+        let viewModel = Detail.Fetch.ViewModel(gif: response.gif, isFavorite: response.isFavorite)
         viewController?.displayFetch(viewModel: viewModel)
+    }
+    
+    func presentUpdate(response: Detail.Update.Response) {
+        let viewModel = Detail.Update.ViewModel(isFavorite: response.isFavorite)
+        viewController?.displayUpdate(viewModel: viewModel)
     }
 }

@@ -38,9 +38,14 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" id="yWb-Pf-b3Y">
                             <imageReference key="image" image="suit.heart" catalog="system" symbolScale="default"/>
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="touchFavorite:" destination="9i9-Ot-eKd" id="dnJ-dV-99j"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="favoriteButton" destination="yWb-Pf-b3Y" id="7bP-PO-OBf"/>
                         <outlet property="imageView" destination="cuG-hN-ukw" id="rJg-r0-vdQ"/>
                     </connections>
                 </viewController>

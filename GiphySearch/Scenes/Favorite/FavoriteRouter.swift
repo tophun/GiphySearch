@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol FavoriteRoutingLogic {
-    
+    func routeToDetail()
 }
 
 protocol FavoriteDataPassing {
@@ -39,16 +39,25 @@ class FavoriteRouter: NSObject, FavoriteRoutingLogic, FavoriteDataPassing {
             navigateToSomewhere(source: viewController!, destination: destinationVC)
         }
     }*/
+    func routeToDetail() {
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToDetail(source: dataStore!, destination: &destinationDS)
+        navigateToDetail(source: viewController!, destination: destinationVC)
+    }
+    
     
     // MARK: Navigation
     
-    /*func navigateToSomewhere(source: FavoriteViewController, destination: SomewhereViewController) {
+    func navigateToDetail(source: FavoriteViewController, destination: DetailViewController) {
         source.show(destination, sender: nil)
-    }*/
+    }
     
     // MARK: Passing data
     
-    /*func passDataToSomewhere(source: FavoriteDataStore, destination: inout SomewhereDataStore) {
-        destination.name = source.name
-    }*/
+    func passDataToDetail(source: FavoriteDataStore, destination: inout DetailDataStore) {
+        guard let row = viewController!.collectionView.indexPathsForSelectedItems?.first?.row else { return }
+        destination.gif = source.list[row]
+    }
 }

@@ -13,5 +13,14 @@
 import UIKit
 
 class DetailWorker {
+    func fetch(_ gif: Gif, completion: @escaping (Detail.Fetch.Response) -> Void) {
+        let response = Detail.Fetch.Response(gif: gif, isFavorite: FavoriteManager.shared.list.contains(gif))
+        completion(response)
+    }
     
+    func update(_ gif: Gif, isFavorite: Bool, completion: @escaping (Detail.Update.Response) -> Void) {
+        isFavorite ? FavoriteManager.shared.create(gif) : FavoriteManager.shared.delete(gif)
+        let response = Detail.Update.Response(isFavorite: isFavorite)
+        completion(response)
+    }
 }

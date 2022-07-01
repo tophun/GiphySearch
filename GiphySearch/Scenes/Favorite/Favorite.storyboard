@@ -57,7 +57,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eh4-Lh-5UY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" id="tWc-DC-nRp">
-                        <imageReference key="image" image="star.fill" catalog="system" symbolScale="default"/>
+                        <imageReference key="image" image="heart.fill" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -76,7 +76,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

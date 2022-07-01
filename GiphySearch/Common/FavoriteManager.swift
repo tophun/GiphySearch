@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FavoriteManager {
+class FavoriteManager: NSObject {
     static let shared: FavoriteManager = {
         let shared = FavoriteManager()
         shared._list = UserDefaults.standard.object([Gif].self, with: "favorite_gifs") ?? []
@@ -29,6 +29,7 @@ class FavoriteManager {
     }
     
     func create(_ gif: Gif) {
+        guard !list.contains(gif) else { return }
         list.append(gif)
     }
     

@@ -14,6 +14,7 @@ import UIKit
 
 protocol DetailBusinessLogic {
     func fetch()
+    func update()
 }
 
 protocol DetailDataStore {
@@ -22,12 +23,24 @@ protocol DetailDataStore {
 
 class DetailInteractor: DetailBusinessLogic, DetailDataStore {
     var presenter: DetailPresentationLogic?
-    var worker: DetailWorker?
+    var worker = DetailWorker()
     var gif: Gif?
+    var isFavorite: Bool = false
     
     func fetch() {
         guard let gif = gif else { return }
-        let response = Detail.Fetch.Response(gif: gif)
-        presenter?.presentFetch(response: response)
+        worker.fetch(gif) { [weak self] response in
+            self?.isFavorite = response.isFavorite
+            self?.presenter?.presentFetch(response: response)
+        }
+    }
+    
+    func update() {
+        guard let gif = gif else { return }
+        isFavorite.toggle()
+        worker.update(gif, isFavorite: isFavorite) { [weak self] response in
+            self?.isFavorite = response.isFavorite
+            self?.presenter?.presentUpdate(response: response)
+        }
     }
 }

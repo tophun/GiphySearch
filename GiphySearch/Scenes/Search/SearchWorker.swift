@@ -53,7 +53,3 @@ class SearchWorker {
             }
     }
 }
-
-protocol GifStoreProtocol {
-    func fetchGifs()
-}

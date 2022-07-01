@@ -14,6 +14,7 @@ import UIKit
 
 protocol DetailDisplayLogic: AnyObject {
     func displayFetch(viewModel: Detail.Fetch.ViewModel)
+    func displayUpdate(viewModel: Detail.Update.ViewModel)
 }
 
 class DetailViewController: UIViewController, DetailDisplayLogic {
@@ -21,6 +22,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
     var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
     // MARK: Object lifecycle
     
@@ -67,7 +69,31 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         interactor?.fetch()
     }
     
+    private func download(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { completion(nil); return }
+            let image = UIImage(data: data)
+            completion(image)
+        }
+        task.resume()
+    }
+    
+    private func setFavoriteButtonImage(_ isFavorite: Bool) {
+        self.favoriteButton.image = isFavorite ? UIImage(systemName: "suit.heart.fill") : UIImage(systemName: "suit.heart")
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func touchFavorite(_ button: UIBarButtonItem) {
+        interactor?.update()
+    }
+}
+
+// MARK: - DetailDisplayLogic
+
+extension DetailViewController {
     func displayFetch(viewModel: Detail.Fetch.ViewModel) {
+        self.setFavoriteButtonImage(viewModel.isFavorite)
         guard let url = URL(string: viewModel.gif.images.originalStill.url) else { return }
         if let cacheImage = Cache.imageCache.object(forKey: url.absoluteString as NSString) {
             DispatchQueue.main.async { [weak self] in
@@ -86,12 +112,7 @@ class DetailViewController: UIViewController, DetailDisplayLogic {
         }
     }
     
-    private func download(url: URL, completion: @escaping (UIImage?) -> Void) {
-        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { completion(nil); return }
-            let image = UIImage(data: data)
-            completion(image)
-        }
-        task.resume()
+    func displayUpdate(viewModel: Detail.Update.ViewModel) {
+        self.setFavoriteButtonImage(viewModel.isFavorite)
     }
 }

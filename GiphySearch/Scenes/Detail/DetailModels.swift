@@ -21,10 +21,26 @@ enum Detail {
         
         struct Response {
             var gif: Gif
+            var isFavorite: Bool
         }
         
         struct ViewModel {
             var gif: Gif
+            var isFavorite: Bool
+        }
+    }
+    
+    enum Update {
+        struct Request {
+            
+        }
+        
+        struct Response {
+            var isFavorite: Bool
+        }
+        
+        struct ViewModel {
+            var isFavorite: Bool
         }
     }
 }

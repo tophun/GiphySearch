@@ -17,15 +17,17 @@ protocol FavoriteBusinessLogic {
 }
 
 protocol FavoriteDataStore {
-    
+    var list: [Gif] { get set }
 }
 
 class FavoriteInteractor: FavoriteBusinessLogic, FavoriteDataStore {
     var presenter: FavoritePresentationLogic?
     var worker = FavoriteWorker()
+    var list: [Gif] = []
     
     func fetch() {
         worker.fetch { [weak self] response in
+            self?.list = response.list
             self?.presenter?.presentFetch(response: response)
         }
     }

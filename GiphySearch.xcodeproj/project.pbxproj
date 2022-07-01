@@ -190,9 +190,9 @@
 		E280922A286BC902000F2C5D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E280922D286BCA78000F2C5D /* Search */,
 				E2F0E315286E665A00E57120 /* Favorite */,
 				E2F0E306286DDC0000E57120 /* Detail */,
-				E280922D286BCA78000F2C5D /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -279,9 +279,9 @@
 		E283FC1D286C1808005AC4E4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E2F0E313286DDFC500E57120 /* SearchHeaderViewCell.swift */,
 				E283FC1E286C1826005AC4E4 /* GifItemCell.swift */,
 				E2F0E32A286E86F800E57120 /* GifItemCell.xib */,
-				E2F0E313286DDFC500E57120 /* SearchHeaderViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

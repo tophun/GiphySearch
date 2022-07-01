@@ -75,12 +75,16 @@ class FavoriteViewController: UIViewController, FavoriteDisplayLogic {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetch()
+    }
+    
+    private func fetch() {
         interactor?.fetch()
     }
 }
 
 extension FavoriteViewController {
-    private func setupView() {
+    @objc private func setupView() {
         navigationItem.title = "Favortie"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .never
@@ -102,6 +106,9 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GifItemCell.self), for: indexPath) as? GifItemCell else { fatalError() }
         cell.bind(favoriteList[indexPath.row])
+        cell.favoriteUpdate = { [weak self] in
+            self?.fetch()
+        }
         return cell
     }
     
@@ -122,6 +129,6 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        router?.routeToDetail()
     }
 }

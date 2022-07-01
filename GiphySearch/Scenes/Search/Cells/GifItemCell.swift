@@ -8,12 +8,16 @@
 import UIKit
 
 class GifItemCell: UICollectionViewCell {
+    typealias TouchClosure = () -> Void
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var sessionTask : URLSessionDataTask?
     private var gif: Gif?
+    
+    public var favoriteUpdate: TouchClosure = {}
     
     public func bind(_ gif: Gif) {
         self.gif = gif
@@ -69,6 +73,7 @@ class GifItemCell: UICollectionViewCell {
             FavoriteManager.shared.create(gif)
         }
         button.isSelected.toggle()
+        favoriteUpdate()
     }
 }
 
