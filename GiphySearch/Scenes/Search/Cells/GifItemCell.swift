@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GifItemCell: UICollectionViewCell {
     typealias TouchClosure = () -> Void
@@ -22,22 +23,27 @@ class GifItemCell: UICollectionViewCell {
     public func bind(_ gif: Gif) {
         self.gif = gif
         favoriteButton.isSelected = FavoriteManager.shared.list.contains(gif)
-        loadImage()
+        loadGif()
     }
     
-    private func download(url: URL, completion: @escaping (UIImage?) -> Void) {
+    private func downloadGif(url: URL, completion: @escaping (UIImage?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, _, _ in
             guard let data = data else { completion(nil); return }
-            let image = UIImage(data: data)
-            completion(image)
+            guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
+                print("image doesn't exist")
+                completion(nil)
+                return
+            }
+            
+            completion(UIImage.animatedImageWithSource(source))
         }
         task.resume()
         self.sessionTask = task
     }
     
-    func loadImage() {
+    func loadGif() {
         guard let gif = gif,
-              let url = URL(string: gif.images.previewStill.url) else { return }
+              let url = URL(string: gif.images.preview.url) else { return }
         loading(true)
         if let cacheImage = Cache.imageCache.object(forKey: url.absoluteString as NSString) {
             DispatchQueue.main.async { [weak self] in
@@ -46,7 +52,7 @@ class GifItemCell: UICollectionViewCell {
             }
             
         } else {
-            download(url: url, completion: { image in
+            downloadGif(url: url, completion: { image in
                 DispatchQueue.main.async { [weak self] in
                     if let image = image {
                         Cache.imageCache.setObject(image, forKey: url.absoluteString as NSString)
@@ -76,6 +82,7 @@ class GifItemCell: UICollectionViewCell {
         favoriteUpdate()
     }
 }
+
 
 extension GifItemCell {
     private func loading(_ activate: Bool) {

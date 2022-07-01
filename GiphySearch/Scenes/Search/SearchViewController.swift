@@ -155,6 +155,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        guard isSearch else { return }
         reset()
         fetchTrending()
     }
